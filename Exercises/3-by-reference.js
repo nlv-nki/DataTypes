@@ -1,10 +1,9 @@
 'use strict';
 
 const inc = (obj) => {
-  (typeof obj === 'object') ?
-    obj.n++ :
-   `not obj`
-
+  if (typeof obj === 'object') {
+    obj.n++;
+  }
 };
 
 module.exports = { inc };

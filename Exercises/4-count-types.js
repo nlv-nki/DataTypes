@@ -1,15 +1,17 @@
 'use strict';
 
-const arr = [true, 'hello', 5, 12, -200, false, false, 'word'];
-const hash = { number: 0, string: 0, boolean: 0 };
-
 const countTypesInArray = (arr) => {
+  const hash = { };
   for (const elem of arr) {
-    console.log(typeof elem);
-    let prop = typeof elem;
-    if (hash.hasOwnProperty(prop)) {
+    const prop = typeof elem;
+    if (prop in hash) {
       hash[prop]++;
     }
+    else {
+      hash[prop] = 1;
+    }
   }
-}
+  return hash;
+};
+
 module.exports = { countTypesInArray };
